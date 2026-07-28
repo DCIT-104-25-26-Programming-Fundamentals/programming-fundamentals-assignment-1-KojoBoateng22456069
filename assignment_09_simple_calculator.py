@@ -68,3 +68,58 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+while True:
+    print("\n============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+    choice = input("Select an operation (1-7): ")
+
+    if choice == '7':
+        print("Goodbye!")
+        break
+
+    if choice not in {'1', '2', '3', '4', '5', '6'}:
+        print("Invalid choice. Please select a number between 1 and 7.")
+        continue
+
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+        continue
+
+    if choice == '1':
+        result = num1 + num2
+        operation = '+'
+    elif choice == '2':
+        result = num1 - num2
+        operation = '-'
+    elif choice == '3':
+        result = num1 * num2
+        operation = '*'
+    elif choice == '4':
+        if num2 == 0:
+            print("Error: Cannot divide by zero.")
+            continue
+        result = round(num1 / num2, 2)
+        operation = '/'
+    elif choice == '5':
+        if num2 == 0:
+            print("Error: Cannot perform modulus by zero.")
+            continue
+        result = num1 % num2
+        operation = '%'
+    elif choice == '6':
+        result = num1 ** num2
+        operation = '**'
+
+    print(f"Result: {num1} {operation} {num2} = {result}")

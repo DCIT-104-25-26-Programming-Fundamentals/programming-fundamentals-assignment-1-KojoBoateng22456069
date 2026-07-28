@@ -55,3 +55,16 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+#part A - Single Table
+number = int(input("Enter a number for the multiplication table: "))
+print(f"Multiplication Table for {number}:")
+for i in range(1, 13):
+    print(f"{number} x {i} = {number * i}")
+
+#part B - Bonus: Tables from 1 to N
+n = int(input("Enter the value of N: "))
+for num in range(1, n + 1):
+    print(f"Multiplication Table for {num}:")
+    for i in range(1, 13):
+        print(f"{num} x {i} = {num * i}")
+    print("---------------------------")
